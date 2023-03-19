@@ -23,6 +23,6 @@
 @test TDD.graphConnect([[2,3],[3],[4,5],[6],[7]], [7], "indirect") == [7]
 
 # 1-3 Given a graph, identify all connected nodes
-@test TDD.graphConnect([1], "all") == [1]
+@test TDD.graphConnect([1], "all") == [[1]]
 @test TDD.graphConnect([[2,3],[1],[1],[5],[4]], "all") == [[1,2,3],[4,5]]
-@test TDD.graphConnect([[2,3],[3],[4,5],[6],[7]], "all") == [[1,2,3,4,5,6,7]]
+@test TDD.graphConnect([[2,3],[3],[4,5],[6],[7]], "all") == [[1,2,3,4,5,6,7], [2,3,4,5,6,7], [3,4,5,6,7], [4,6],[5,7]]
