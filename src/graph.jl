@@ -49,9 +49,28 @@ function graphConnect(map, node, type::AbstractString)
         end
         return unique(sort(bucketString))
     end
-    return unique(sort(bucketString))
 end
 
-#graphConnect([1], [1])
-#graphConnect([[2,3],[1],[1],[5],[4]], [5], "indirect")
-#graphConnect([[2,3],[3],[4,5],[6],[7]], [3], "indirect")
+function graphConnect(map, type::AbstractString)
+    d = Dict{Int64, Vector}()
+    oa = [Int64[]]
+    # Construct dictionary
+    if (type == "all")
+        for i in 1:length(map)
+            d[i] = graphConnect(map, i, "indirect")
+        end
+    end
+    # Initialize output array 
+    oa[1] = d[1]
+    # Read through dictionary
+    for j in 1:length(map)
+        if d[j] ∉ oa
+            push!(oa,d[j])
+        end
+    end
+    return oa
+end
+
+#graphConnect([1], "all")
+#graphConnect([[2,3],[1],[1],[5],[4]], "all")
+#graphConnect([[2,3],[3],[4,5],[6],[7]], "all")
