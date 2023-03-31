@@ -117,9 +117,9 @@ end
 
 # 1-4 for adjacency matrix format
 
-graphConnect([1], "all")
-graphConnect([[2,3],[1],[1],[5],[4]], "all")
-graphConnect([[2,3],[3],[4,5],[6],[7]], "all")
-graphConnect(Bool[1], "all")
-graphConnect(Bool[1 1 1 0 0; 1 1 0 0 0; 1 0 1 0 0; 0 0 0 1 1; 0 0 0 1 1], "all")
-graphConnect(Bool[1 1 1 0 0 0 0; 0 1 1 0 0 0 0; 0 0 1 1 1 0 0; 0 0 0 1 0 1 0; 0 0 0 0 1 0 1; 0 0 0 0 0 1 0; 0 0 0 0 0 0 1], "all")
+#graphConnect([1], "all")
+#graphConnect([[2,3],[1],[1],[5],[4]], "all")
+#graphConnect([[2,3],[3],[4,5],[6],[7]], "all")
+#graphConnect(Bool[1], "all")
+#graphConnect(Bool[1 1 1 0 0; 1 1 0 0 0; 1 0 1 0 0; 0 0 0 1 1; 0 0 0 1 1], "all")
+#graphConnect(Bool[1 1 1 0 0 0 0; 0 1 1 0 0 0 0; 0 0 1 1 1 0 0; 0 0 0 1 0 1 0; 0 0 0 0 1 0 1; 0 0 0 0 0 1 0; 0 0 0 0 0 0 1], "all")
