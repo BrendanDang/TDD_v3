@@ -22,6 +22,6 @@
 @test TDD.intersect(MyInterval(1,16),[7,99]) == MyInterval(7,16)
 
 #2-6
-@test TDD.ppIntersect(MyInterval(3,3)) == '\u301a'*'3'*','*'3'*'\u301b'
-@test TDD.ppIntersect(intersect([1,6],MyInterval(4,8))) == '\u301a'*'4'*','*'6'*'\u301b'
-@test TDD.ppIntersect() == '\u301a'*'∅'*'\u301b'
+@test ppIntersect(MyInterval(3,3)) == '\u301a'*'3'*','*'3'*'\u301b'
+@test ppIntersect(intersect([1,6],MyInterval(4,8))) == '\u301a'*'4'*','*'6'*'\u301b'
+@test ppIntersect() == '\u301a'*'∅'*'\u301b'
