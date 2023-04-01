@@ -15,3 +15,8 @@
 @test TDD.issubset(MyInterval(3.0,6.0),MyInterval(2.0,9.0)) == true
 @test TDD.issubset([1,5.3],MyInterval(2,9)) == false
 @test TDD.issubset(MyInterval(3.5,4.5),[0.5,7.8]) == true
+
+#2.5
+@test TDD.intersect(MyInterval(1,3),MyInterval(3,5)) == MyInterval(3,3)
+@test TDD.intersect([1,6],MyInterval(4,8)) == MyInterval(4,6)
+@test TDD.intersect(MyInterval(1,16),[7,99]) == MyInterval(7,16)
