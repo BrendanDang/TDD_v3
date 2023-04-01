@@ -42,7 +42,7 @@ function Base.:(isempty)(a::MyInterval)
     end
 end
 
-# Subsets
+# 2-4 Subsets
 function Base.:(issubset)(a::MyInterval, b::MyInterval)
     return a in b
 end
@@ -55,20 +55,15 @@ function Base.:(issubset)(a::MyInterval, b::Vector{Float64})
     return minimum(a) >= b[1] && maximum(a) <= b[2]
 end
 
-#function Base.:(iterate)(b::MyInterval)
-#    return iterate(minimum(b):maximum(b))
-#end
+#2-5 Intersect
+function Base.:(intersect)(a::MyInterval, b::MyInterval)
+    return MyInterval(max(minimum(a),minimum(b)),min(maximum(a),maximum(b)))
+end
 
-#function Base.:(iterate)(b::MyInterval, c::Int64)
-#    return iterate(minimum(b):c:maximum(b))
-#end
-#minimum(MyInterval(2,9)) == 2 
-#maximum(MyInterval(2,9)) == 9
+function Base.:(intersect)(a::Vector{}, b::MyInterval)
+    return MyInterval(max(a[1],minimum(b)),min(a[2],maximum(b)))
+end
 
-#in(3,MyInterval(2,9)) == true
-#in(9.1,MyInterval(2,9)) == false
-
-#isempty(MyInterval()) == true
-#2.4
-#issubset(MyInterval(3.0,6.0),MyInterval(2.0,9.0))
-#issubset([1,5.3],MyInterval(2,9))
+function Base.:(intersect)(a::MyInterval, b::Vector{})
+    return MyInterval(max(minimum(a),b[1]),min(maximum(a),b[2]))
+end
