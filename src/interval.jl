@@ -16,5 +16,11 @@ function Base.:(maximum)(a::MyInterval)
     return a.y
 end
 
-#@test TDD.minimum(MyInterval(2,9)) == 2 
-#MyInterval(2,9)
+# Extend in
+function Base.:(in)(a::Float64,b::MyInterval)
+    return a in (b.x:b.y)
+end
+
+function Base.:(in)(a::Int64,b::MyInterval)
+    return a in (b.x:b.y)
+end
