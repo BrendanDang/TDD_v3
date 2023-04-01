@@ -7,3 +7,6 @@
 #2.2
 @test TDD.in(3,MyInterval(2,9)) == true
 @test TDD.in(9.1,MyInterval(2,9)) == false
+
+#2.3
+@test TDD.isempty(MyInterval()) == true
