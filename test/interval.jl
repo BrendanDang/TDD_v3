@@ -10,3 +10,7 @@
 
 #2.3
 @test TDD.isempty(MyInterval()) == true
+
+#2.4
+@test TDD.issubset((2:5.3),MyInterval(2,9)) == true
+@test TDD.issubset((1:5.3),MyInterval(2,9)) == false
