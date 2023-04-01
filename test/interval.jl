@@ -20,3 +20,8 @@
 @test TDD.intersect(MyInterval(1,3),MyInterval(3,5)) == MyInterval(3,3)
 @test TDD.intersect([1,6],MyInterval(4,8)) == MyInterval(4,6)
 @test TDD.intersect(MyInterval(1,16),[7,99]) == MyInterval(7,16)
+
+#2-6
+@test TDD.ppIntersect(MyInterval(3,3)) == [3,3]
+@test TDD.ppIntersect(intersect([1,6],MyInterval(4,8))) == [4,6]
+@test TDD.ppIntersect() == ∅
