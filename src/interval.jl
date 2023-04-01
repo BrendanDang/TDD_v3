@@ -75,15 +75,3 @@ function ppIntersect(a::MyInterval{} = MyInterval())
         return '\u301a'*string(minimum(a))*','*string(maximum(a))*'\u301b'
     end
 end
-
-function ppIntersect(a::MyInterval{Int64})
-    if isempty(a)
-        return '\u301a'*'∅'*'\u301b'
-    else
-        return '\u301a'*string(minimum(a))*','*string(maximum(a))*'\u301b'
-    end
-end
-
-#ppIntersect(MyInterval(3,3)) == '\u301a'*'3'*','*'3'*'\u301b'
-#ppIntersect(intersect([1,6],MyInterval(4,8))) == '\u301a'*'4'*','*'6'*'\u301b'
-#ppIntersect() == '\u301a'*'∅'*'\u301b'
